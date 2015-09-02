@@ -1,0 +1,14 @@
+@import "variables";
+
+@mixin bodyText ($sizeValue) {
+	font-size: $sizeValue;
+	font-family: $bodyfont;
+}
+
+@mixin headingText ($sizeValue) {
+	font-size: $sizeValue; 
+	font-family: $headingfont;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}

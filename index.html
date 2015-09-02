@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>New York, New York</title>
+	<link rel="shortcut icon" type="image/jpg" href="assets/new-york-favicon.jpg"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet'/>
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+	<header id="home">
+		<nav>
+			
+		</nav>
+		<div class="header-content">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 90 70" enable-background="new 0 0 90 90" xml:space="preserve"><g><path d="M80.364,64.782l-20.277-0.419c-0.042-0.452-0.108-0.914-0.186-1.378l18.072-15.024c0.558-0.463,0.672-1.274,0.264-1.874   c-0.408-0.6-1.207-0.79-1.841-0.441L57.066,56.258c-0.032-0.042-0.061-0.086-0.094-0.129c-0.118-0.146-0.251-0.273-0.375-0.413   L67.28,28.711c0.271-0.688-0.034-1.469-0.702-1.788c-0.669-0.319-1.467-0.067-1.831,0.576L50.835,52.054   c-0.229-0.07-0.47-0.125-0.707-0.185l-1.879-30.055c-0.046-0.735-0.651-1.311-1.389-1.319c-0.708,0.042-1.355,0.553-1.418,1.287   L42.901,51.51c-0.053,0.009-0.107,0.013-0.159,0.022L29.766,26.381c-0.334-0.648-1.11-0.933-1.783-0.658   c-0.675,0.275-1.028,1.02-0.813,1.717l8.577,27.87c-0.041,0.045-0.085,0.082-0.125,0.127c-0.256,0.291-0.466,0.612-0.694,0.921   L14.279,45.452c-0.649-0.343-1.452-0.129-1.845,0.491c-0.393,0.619-0.244,1.438,0.343,1.879l19.455,14.631   c-0.054,0.24-0.087,0.479-0.132,0.72L7.794,63.34c-0.734,0.004-1.342,0.575-1.394,1.307c-0.053,0.733,0.468,1.382,1.195,1.492   l24.275,3.637c0.003,0.029,0.004,0.062,0.008,0.089c0.081,0.637,0.581,1.139,1.218,1.22c0.637,0.087,1.247-0.276,1.486-0.873   c2.528-6.326,6.054-9.273,11.098-9.273l0.333,0.004c6.938,0.183,10.257,5.481,10.991,9.963c0.11,0.676,0.69,1.173,1.375,1.18   c0.004,0,0.01,0,0.014,0c0.583,0,1.076-0.368,1.286-0.893l20.896-3.619c0.714-0.123,1.218-0.769,1.164-1.492   C81.684,65.36,81.089,64.798,80.364,64.782z M64.901,55.168l-5.784,4.809c-0.162-0.445-0.354-0.886-0.565-1.322L64.901,55.168z    M57.211,46.51l-2.859,7.227c-0.296-0.2-0.597-0.395-0.912-0.572L57.211,46.51z M46.627,40.974l0.651,10.417   c-0.391-0.034-0.779-0.072-1.185-0.086l-0.349-0.005L46.627,40.974z M39.979,52.317c-0.671,0.276-1.298,0.623-1.896,1.012   l-3.577-11.621L39.979,52.317z M28.599,56.199l4.866,2.571c-0.128,0.273-0.222,0.558-0.334,0.837L28.599,56.199z M25.866,66.03   l5.894-0.041c-0.017,0.311-0.024,0.615-0.027,0.919L25.866,66.03z M46.085,58.13l-0.405-0.005c-4.5,0-8.084,1.869-10.846,5.682   c0.303-1.7,0.865-3.399,1.75-4.896c0.013-0.022,0.036-0.036,0.049-0.059c0.014-0.027,0.012-0.056,0.023-0.083   c0.318-0.519,0.673-1.012,1.076-1.468c1.867-2.117,4.485-3.189,7.784-3.189l0.49,0.007c3.369,0.106,6.028,1.072,7.93,2.871   c0.033,0.035,0.068,0.063,0.104,0.094c0.261,0.256,0.51,0.524,0.741,0.812c1.256,1.558,2.075,3.65,2.416,6.034   C54.716,60.396,50.78,58.254,46.085,58.13z M60.117,68.262c0.026-0.345,0.045-0.708,0.056-1.083l5.531,0.115L60.117,68.262z"/></g></svg>
+			<h1>New York, New York</h1>
+			<h2>A City Events Guide</h2>
+			<form id="dates">
+			<label for="start-date" class="datepicker">
+				<input type="text" id="date1" class="datepicker start-date" placeholder="Arrival Date">
+				<i class="fa fa-chevron-down"></i>
+			</label>
+			<label for="end-date" class="datepicker"> 
+				<input type="text" id="date2" class="datepicker end-date" placeholder="Departure Date">
+				<i class="fa fa-chevron-down"></i>
+			</label> 
+			<button class="date-submit"><a>SUBMIT</a></button>
+		</div>
+	</header>
+
+	<div class="myevents hide">
+	<a href="" class="refresh">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 90 70" enable-background="new 0 0 90 70" xml:space="preserve"><g><path d="M80.364,64.782l-20.277-0.419c-0.042-0.452-0.108-0.914-0.186-1.378l18.072-15.024c0.558-0.463,0.672-1.274,0.264-1.874   c-0.408-0.6-1.207-0.79-1.841-0.441L57.066,56.258c-0.032-0.042-0.061-0.086-0.094-0.129c-0.118-0.146-0.251-0.273-0.375-0.413   L67.28,28.711c0.271-0.688-0.034-1.469-0.702-1.788c-0.669-0.319-1.467-0.067-1.831,0.576L50.835,52.054   c-0.229-0.07-0.47-0.125-0.707-0.185l-1.879-30.055c-0.046-0.735-0.651-1.311-1.389-1.319c-0.708,0.042-1.355,0.553-1.418,1.287   L42.901,51.51c-0.053,0.009-0.107,0.013-0.159,0.022L29.766,26.381c-0.334-0.648-1.11-0.933-1.783-0.658   c-0.675,0.275-1.028,1.02-0.813,1.717l8.577,27.87c-0.041,0.045-0.085,0.082-0.125,0.127c-0.256,0.291-0.466,0.612-0.694,0.921   L14.279,45.452c-0.649-0.343-1.452-0.129-1.845,0.491c-0.393,0.619-0.244,1.438,0.343,1.879l19.455,14.631   c-0.054,0.24-0.087,0.479-0.132,0.72L7.794,63.34c-0.734,0.004-1.342,0.575-1.394,1.307c-0.053,0.733,0.468,1.382,1.195,1.492   l24.275,3.637c0.003,0.029,0.004,0.062,0.008,0.089c0.081,0.637,0.581,1.139,1.218,1.22c0.637,0.087,1.247-0.276,1.486-0.873   c2.528-6.326,6.054-9.273,11.098-9.273l0.333,0.004c6.938,0.183,10.257,5.481,10.991,9.963c0.11,0.676,0.69,1.173,1.375,1.18   c0.004,0,0.01,0,0.014,0c0.583,0,1.076-0.368,1.286-0.893l20.896-3.619c0.714-0.123,1.218-0.769,1.164-1.492   C81.684,65.36,81.089,64.798,80.364,64.782z M64.901,55.168l-5.784,4.809c-0.162-0.445-0.354-0.886-0.565-1.322L64.901,55.168z    M57.211,46.51l-2.859,7.227c-0.296-0.2-0.597-0.395-0.912-0.572L57.211,46.51z M46.627,40.974l0.651,10.417   c-0.391-0.034-0.779-0.072-1.185-0.086l-0.349-0.005L46.627,40.974z M39.979,52.317c-0.671,0.276-1.298,0.623-1.896,1.012   l-3.577-11.621L39.979,52.317z M28.599,56.199l4.866,2.571c-0.128,0.273-0.222,0.558-0.334,0.837L28.599,56.199z M25.866,66.03   l5.894-0.041c-0.017,0.311-0.024,0.615-0.027,0.919L25.866,66.03z M46.085,58.13l-0.405-0.005c-4.5,0-8.084,1.869-10.846,5.682   c0.303-1.7,0.865-3.399,1.75-4.896c0.013-0.022,0.036-0.036,0.049-0.059c0.014-0.027,0.012-0.056,0.023-0.083   c0.318-0.519,0.673-1.012,1.076-1.468c1.867-2.117,4.485-3.189,7.784-3.189l0.49,0.007c3.369,0.106,6.028,1.072,7.93,2.871   c0.033,0.035,0.068,0.063,0.104,0.094c0.261,0.256,0.51,0.524,0.741,0.812c1.256,1.558,2.075,3.65,2.416,6.034   C54.716,60.396,50.78,58.254,46.085,58.13z M60.117,68.262c0.026-0.345,0.045-0.708,0.056-1.083l5.531,0.115L60.117,68.262z"/></g></svg>
+			<p class="logo">New York, New York</p>
+		</a>
+		<p class="my-activities"><a class="show-modal"href="#"><i class="fa fa-paperclip"></i> My Activities</a></p>
+	</div>
+	<div class="modal hide">
+		<div class="events">
+			<i class="fa fa-times"></i>
+			<h2>My Activities</h2>
+			<div class="saved-activities"></div>
+		</div>
+	</div>
+	<section class="form-section hide">
+		<div class="options-results">
+			<div class="questions">
+			<div class="bottom-dates">
+				<p>Date range:</p>
+				<label for="start-date-bottom" class="datepicker-bottom">
+					<input type="text" id="date3" class="datepicker datepicker-bottom start-date-bottom" placeholder="">
+					<i class="fa fa-chevron-down"></i>
+				</label>
+				<label for="end-date-bottom" class="datepicker-bottom">
+					<input type="text" id="date4" class="datepicker datepicker-bottom end-date-bottom" placeholder="">
+					<i class="fa fa-chevron-down"></i>
+				</label>
+			</div>
+				<div class="question neighborhood-question">
+					<p>Pick a neighborhood:</p>
+
+					<label for="chelsea" id="chelsea">
+						<i class="fa fa-square-o unchecked"></i>
+						<input type="checkbox" name ="neighborhood chelsea" id="chelsea" value="Chelsea">Chelsea
+					</label>
+					<label for="greenwich-village" id="greenwich-village">
+						<i class="fa fa-square-o"></i>
+						<input type="checkbox" name ="greenwich-village" id="greenwich-village" value="'Greenwich Village'">Greenwich Village
+					</label>
+
+					<label for="SoHo" id="SoHo">
+						<i class="fa fa-square-o"></i>
+						<input type="checkbox" name ="SoHo" value="SoHo" id="SoHo">SoHo
+					</label>
+
+					<label for="TriBeCa" id="TriBeCa">
+						<i class="fa fa-square-o unchecked"></i>
+						<input type="checkbox" name ="TriBeCa" value="TriBeCa" id="TriBeCa">TriBeCa
+					</label>
+
+					<label for="east-village" id="east-village">
+						<i class="fa fa-square-o unchecked"></i>
+						<input type="checkbox" name ="neighborhood east-village" id="east-village" value="'East Village'">East Village
+					</label>
+
+					<label for="times-square" id="times-square">
+						<i class="fa fa-square-o unchecked"></i>
+						<input type="checkbox" name ="neighborhood times-square" id="times square" value="'Times Square Theater District'">Times Square
+					</label>
+
+					<label for="union-square" id="union-square">
+						<i class="fa fa-square-o unchecked"></i>
+						<input type="checkbox" name ="neighborhood union-square" id="union square" value="'Union Square'">Union Square
+					</label>
+					<label for="upper-west-side" id="upper-west-side">
+						<i class="fa fa-square-o unchecked"></i>
+						<input type="checkbox" name ="neighborhood upper-west-side" id="upper-west-side" value="'Upper West Side'">Upper West Side
+					</label>
+				</div> <!--end of neighborhood-question div-->
+				<div class="question category-question">
+					<p>Pick an activity:</p>
+					<label for="comedy" id="comedy">
+						<i class="fa fa-square-o unchecked"></i>
+						<input type="checkbox" class="category" name="comedy" value="Comedy" id="comedy">Comedy
+					</label>
+
+					<label for="art" id="art">
+						<i class="fa fa-square-o unchecked"></i>
+						<input type="checkbox" class="category" name="art" value="Art" id="art">Art
+					</label>
+
+					<label for="theater" id="theater">
+						<i class="fa fa-square-o unchecked"></i>
+						<input type="checkbox" class="category" name="theater" value="Theater" id="theater">Theater
+					</label>
+					<label for="museums" id="Museums">
+						<i class="fa fa-square-o unchecked"></i>
+						<input type="checkbox" class="category" name="museums" value="spareTimes" id="Museums">Museums
+					</label>
+					<label for="events" id="Events">
+						<i class="fa fa-square-o unchecked"></i>
+						<input type="checkbox" class="category" name="events" value="spareTimes" id="Events">Events
+					</label>
+				</div> <!--end of category-question div-->
+				<div class="submit-div">
+					<input type="submit" class="submit" value="Search">
+				</div>
+			</form><!--end of form-->
+			<div id="results"></div><!--end of results div-->
+			</div><!--end of questions div-->
+			<div id="map"></div><!--end of map div-->
+		</div><!--end of options-results div-->
+	</section>
+
+	<footer class="hide">
+		<p>&copy; Designed & Developed by Evan Davis, Jessica Taylor & Joanna Stecewicz</p>
+		<p>Logo created by Tyler Comrie from the Noun Project</p>
+	</footer>
+
+	<script src='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

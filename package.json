@@ -1,0 +1,26 @@
+{
+  "name": "new-york-events",
+  "version": "1.0.0",
+  "description": "Our week 6 project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanolivia/New-York-Events.git"
+  },
+  "author": "Evan Davis, Joanna Stecewicz, Jess Taylor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evanolivia/New-York-Events/issues"
+  },
+  "homepage": "https://github.com/evanolivia/New-York-Events#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-sass": "^2.0.4"
+  }
+}

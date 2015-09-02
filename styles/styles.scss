@@ -1,0 +1,803 @@
+@import "variables";
+@import "mixins";
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+/*End of Setup Styles*/
+
+/*General Styles*/
+
+html {
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	@include headingText(8rem);
+	color: $offwhite;
+	margin: 0;
+}
+
+h2 {
+	@include bodyText(3.5rem);
+	color: $offwhite;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin: 0 0 3%;
+	font-weight: 300;
+}
+
+p {
+	@include bodyText(1.6rem);
+	color: #000;
+}
+
+/*JavaScript Classes*/
+
+section.hide {
+	display: none;
+}
+
+header.hide {
+	display: none;
+}
+
+div.hide {
+	display: none;
+}
+
+.hide {
+	display: none;
+}
+
+/*Header Styles*/
+
+header {
+	background: linear-gradient( rgba(26, 76, 80, 0.8), rgba(26, 76, 80, 0.5)), url(https://download.unsplash.com/25/black-white-city.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	padding: 10% 0;
+}
+
+header svg {
+	width: 20%;
+	fill: $offwhite;
+}
+
+.header-content {
+	text-align: center;
+	color: #F7FCFA;
+}
+
+.header-content input[type=text] {
+	background: $offwhite;
+	font-size: 2rem;
+	border: none;
+	margin: 0.5%;
+	padding: 1.5% 1.5%;
+}
+
+.header-content input[type=text]:hover {
+	cursor:pointer;
+}
+
+.header-content input[type=text]:focus {
+	outline: 3px solid $lightgreen;
+}
+
+label.datepicker {
+	position: relative;
+}
+
+
+::-webkit-input-placeholder {
+   font-family: $bodyfont;
+   font-weight: 300;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   font-size: 1.5rem;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-family: $bodyfont;
+   font-weight: 300;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   font-size: 1.5rem;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-family: $bodyfont;
+   font-weight: 300;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   font-size: 1.5rem; 
+}
+
+:-ms-input-placeholder {  
+   font-family: $bodyfont;
+   font-weight: 300;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   font-size: 1.5rem;  
+}
+
+.datepicker .fa-chevron-down {
+	position: absolute;
+	top: -5px;
+	right: 6%;
+	color: #000;
+	font-size: 2rem;
+}
+
+.fa-chevron-down:hover {
+	cursor: pointer;
+}
+
+.date-submit {
+    font-size: 2rem;
+    background: $lightgreen;
+    color: $offwhite;
+    border: none;
+    border-bottom: 3px solid #EDEACB;
+    padding: 0.5% 7%;
+    border-radius: 3px;
+    font-family: $headingfont;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0 0.5%;
+    transition: all 0.3s ease;
+}
+
+.date-submit:hover {
+	background: darken($lightgreen, 15%);
+	border-bottom: 3px solid #D5D2B6;
+}
+
+/* Date picker */
+.ui-datepicker {
+  background:#F7FCFA;
+  border: 1px solid #D6C943;
+  width: 223px;
+  border-radius: 3px;
+  height: auto;
+  margin: 5px auto 0;
+  font-family: Oswald sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
+ 
+.ui-datepicker table {
+	width: 100%;
+}
+ 
+.ui-datepicker table td {
+	text-align:center;
+}
+
+.ui-datepicker-header {
+	background: $lightgreen;
+	border: 3px;
+	color: $offwhite;
+	padding: 3% 5%;
+	margin: 0;
+	top: 0;
+
+}
+ 
+.ui-datepicker-prev {
+  font-size: 10px;
+  color: white;
+}
+ 
+.ui-datepicker-next {
+  font-size: 10px;
+  float:right;
+  color: $offwhite;
+}
+
+.ui-datepicker-next a, .ui-datepicker-prev {
+  color: $offwhite;
+} 
+
+.ui-datepicker a {
+	cursor:pointer;
+	color: black;
+	font-family: Montserrat, sans-serif;
+	text-decoration:none;
+	padding: 0 3%;
+}
+
+.ui-datepicker-title {
+	text-align: center;
+	letter-spacing: 5px;
+	font-family: Montserrat, sans-serif;
+	font-weight:300;
+}
+
+.ui-datepicker th {
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+    font-size: 6pt;
+    padding: 5px 0;
+    color: purple;
+    text-shadow: 1px 0px 0px $offwhite;
+    filter: dropshadow(color=$offwhite, offx=1, offy=0);
+}
+
+.ui-datepicker-today {
+	border-radius: 3px;
+  	border: 1px solid $lightgreen !important;
+}
+
+.ui-datepicker-current-day {
+	 background: $lightgreen !important;
+   	 border-radius: 3px;
+}
+
+/*Styles for Form/Map Section*/
+
+.myevents {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	-webkit-align-items: center;
+	justify-content: space-between;
+	padding: 8px 2%;
+	margin: 0;
+	background: #E5EFEC;
+	border-bottom: 2px solid #E5EFEC;
+	position: fixed;
+	top: 0;
+	z-index: 5;
+	width: 100%;
+}
+
+.myevents svg {
+	width: 60px;
+	fill: $darkgreen;
+	position: absolute;
+	top: -5px;
+	left: 1%;
+}
+
+.myevents p {
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+p.my-activities, p.logo {
+	font-family: $headingfont;
+	font-weight: 300;
+	letter-spacing: 1px;
+	font-size: 2rem;
+}
+
+p.my-activities {
+	width: 18%;
+	display: flex;
+	justify-content: flex-end;
+	margin: 0;
+}
+
+.refresh {
+	text-decoration: none
+}
+
+
+p.logo {
+	width: 100%;
+	margin-left: 30%;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-top: 0.5%;
+}
+
+p.logo a{
+	color: $darkgreen;
+	text-decoration: none;
+}
+
+.show-modal {
+	font-family: $headingfont;
+	color: $offwhite;
+	background: $lightgreen;
+	border-bottom: 3px solid #EDEACB;
+	text-decoration: none;
+	padding: 1.5% 2.5%;
+	border-radius: 3px;
+	align-self: flex-end;
+	transition: all 0.3s ease;
+}
+
+.myevents .my-activities:hover a {
+	background: darken($lightgreen, 15%);
+	border-bottom: 3px solid #D5D2B6;
+}
+
+.myevents a p i {
+	color: $offwhite;
+	font-weight: 300;
+	font-size: 2rem;
+	position: relative;
+	top: -1px;
+	transform: rotate(-135deg);
+}
+
+.myevents p i:hover {
+	color: $offwhite;
+	background: darken($lightgreen, 15%);
+}
+
+.modal {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0,0,0,0.7);
+	z-index: 10;
+}
+
+.saved-activities {
+	overflow-y: scroll;
+	height: 100%;
+	padding: 25px auto;
+}
+
+.events {
+	color: $darkgreen;
+	background: #ffffff;
+	padding: 3rem;
+	width: 70%;
+	border: 2px solid #E5EfEc;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	border-radius: 3px;
+	height: 90vh;
+	position: relative;
+}
+
+.events h2 {
+	font-family: $headingfont;
+	font-size: 2rem;
+	color: $darkgreen;
+	text-transform: uppercase;
+	width: 97%;
+	border-bottom: 1px solid $darkgreen;
+	margin-bottom: 3%;
+}
+
+h2.modalTitle {
+	border: none;
+}
+
+.modalAddress, .modalVenue {
+	margin: 0;
+	font-size: 1.4rem;
+	line-height: 1.4;
+}
+
+p.modalDescription {
+	border-bottom: 1px solid $darkgreen;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	line-height: 1.2;
+}
+
+.scrollStop {
+	overflow: hidden;
+}
+
+.events i {
+	color: $darkgreen;
+	font-size: 2rem;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+.events i:hover {
+	cursor: pointer;
+}
+
+
+.form-section {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 16vh;
+}
+/*Form Styles*/
+
+.options-results {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.bottom-dates {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.bottom-dates p {
+	width: 20%;
+	margin: 0;
+	font-size: 2rem;
+	color: $darkgreen;
+	padding-bottom: 1%;
+}
+
+#date3, #date4 {
+	width: 100%;
+	padding: 5%;
+	font-size: 2rem;
+	border: none;
+	border: 1px solid $purple;
+	border-radius: 3px;
+}
+
+#date3:focus, #date4:focus {
+	outline: 2px solid $lightgreen;
+}
+
+label.datepicker-bottom {
+	position: relative;
+	padding: 0;
+	width: 40%;
+}
+input.datepicker-bottom:hover {
+	cursor:pointer;
+}
+.datepicker-bottom .fa-chevron-down {
+	position: absolute;
+	top: 18px;
+	right: 8%;
+	color: #000;
+	font-size: 2rem;
+}
+
+.question {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2% 0 3%;
+	border-bottom: 1px solid $purple;
+}
+
+
+.question input[type="checkbox"] {
+	visibility: hidden; 
+}
+
+.questions{
+	width: 60%;
+	padding: 1% 1.5%;
+	margin-top: -40px;
+}
+
+.question p {
+	font-size: 2rem;
+	width: 100%;
+	color: $darkgreen;
+	padding-bottom: 1%;
+}
+
+.questions label {
+	font-size: 1.5rem;
+	font-family: $bodyfont;
+	text-transform: uppercase;
+	padding: 1% 1.5%;
+}
+
+.question label i {
+	margin: -1%;
+}
+
+
+.submit-div {
+	display: flex;
+	justify-content: flex-end;
+}
+
+
+input[type=submit].submit{
+	font-size: 2rem;
+	background: $purple;
+	color: $offwhite;
+	border: none;
+	border-bottom: 3px solid #BF83D9;
+	padding: 0.5% 4%;
+	border-radius: 3px;
+	font-family: $headingfont;
+	font-weight: 400;
+	letter-spacing: 2px;
+	margin: 2% 0;
+	text-transform: uppercase;
+}
+
+input[type=submit].submit:hover {
+	background: #8845a4;
+}
+
+
+/*Map Styles*/
+
+#map {
+    width: 40%;
+    position: fixed;
+    height: 92vh;
+    right: 0;
+    top: 8vh;
+}
+
+/*Results Styles*/
+
+#results {
+	width: 100%;
+	float:left;
+}
+
+.result-container {
+	width: 48%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 2%;
+	margin: 1%;
+	background: $offwhite;
+	border: 1px solid #E5EfEc;
+	float:left;
+}
+
+.result-container:hover {
+	background: #E5EFEC;
+}
+
+.sorry {
+	font-family: $bodyfont;
+	font-size: 20px;
+	font-weight: 300;
+	color: $darkgreen;
+	text-align: center;
+	padding-top: 5%;
+	line-height: 1.5;
+}
+
+p.title, p.venue, p.address, p.neighborhood {
+	width: 100%;
+}
+
+p.venue, p.address, p.neighborhood {
+	margin: 0;
+}
+
+p.title {
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+p.venue, p.address, p.neighborhood {
+	font-size: 15px;
+	font-family: $headingfont;
+	text-transform: uppercase;
+	color: $darkgreen;
+	font-weight: 300;
+}
+
+
+p.description {
+	font-size: 14px;
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+.save-container {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+p.save {
+	font-family: $headingfont;
+	color: $darkgreen;
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-weight: 300;
+	margin: 0;
+}
+
+p.save:hover {
+	cursor: pointer;
+	color: $purple;
+}
+
+/*Footer Styles*/
+
+footer {
+	float:left;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-end;
+	width: 60%;
+	border-top: 2px solid #E5EFEC;
+	padding: 0.5% 2%;
+}
+
+footer p {
+	color: $darkgreen;
+	width: 100%;
+	font-size: 1.3rem;
+	padding: 0.3% 0;
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+/*Media Queries*/
+
+@media (max-width: 1000px) {
+
+.bottom-dates p {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+label.datepicker-bottom {
+	width: 100%;
+}
+
+#date3, #date4 {
+	padding: 1.5% 1.5%; 
+	width: 100%
+}
+
+.datepicker-bottom .fa-chevron-down {
+	top: 15px;
+	right: 5%;
+}
+
+}
+
+@media (max-width: 890px) {
+
+.options-results {
+	display: inline-block;
+	width: 100%;
+}
+#results {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+
+#map {
+	width: 100%;
+	height: 60vh;
+	position: static;
+}
+
+.questions {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.bottom-dates p, .question p {
+	margin-left: 10px;
+}
+
+input[type=submit].submit {
+	margin-right: 10px;
+}
+
+p.my-activities {
+	width: 50%;
+}
+}
+
+@media (max-width: 700px) {
+	h1 {
+		font-size: 5rem;
+	}
+
+	h2 {
+		font-size: 2.5rem;
+	}
+
+	.header-content input[type=text] {
+		width: 90%;
+		margin-top: 20px;
+	}
+
+	.date-submit {
+		margin-top: 20px;
+		width: 90%;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.header-content {
+		margin-top: 20%;
+	}
+
+	h1 {
+		font-size: 3.5rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+.result-container {
+	width: 95%;
+	margin: 1.5% 2.5%; 
+}
+
+.myevents svg {
+	top: -8	px;
+	width: 40px;
+}
+
+.myevents {
+	padding: 1%
+}
+
+p.logo {
+	margin-left: 40px;
+	font-size: 1.4rem;
+}
+
+p.my-activities {
+	width: 33%;
+	margin: 0;
+	font-size: 1.4rem;
+}
+
+.questions {
+	margin-top: -50px;
+}
+
+footer {
+	display: none;
+}
+
+
+}
+
+
